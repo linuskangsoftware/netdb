@@ -49,7 +49,7 @@ After that, import the javascript module and example script and follow the api d
 
 ## License & Credit
 
-NetDB is licensed under the Apache-2.0 License. View the full license [here](). You are allowed to do the following:
+NetDB is licensed under the Apache-2.0 License. View the full license [here](https://github.com/linuskangsoftware/netdb/blob/main/LICENSE). You are allowed to do the following:
 
 ✅ Use, modify, and distribute the software freely, for personal or commercial use
 
