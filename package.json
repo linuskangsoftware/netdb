@@ -1,0 +1,22 @@
+{
+  "name": "netdb",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "dev": "node src/app.js"
+  },
+  "keywords": [],
+  "author": "Linus Kang",
+  "license": "Apache-2.0",
+  "description": "A simple set of endpoints to manage your MariaDB database.",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "luxon": "^3.6.1",
+    "mysql-server": "^1.0.5",
+    "mysql2": "^3.14.1",
+    "node-fetch": "^3.3.2",
+    "winston": "^3.17.0"
+  }
+}

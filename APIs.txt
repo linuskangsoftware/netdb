@@ -1,0 +1,42 @@
+curl -X POST http://localhost:3000/create-table \
+  -H "Authorization: Bearer YOUR_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{"tableName":"users","columns":"id INT PRIMARY KEY AUTO_INCREMENT, name VARCHAR(255), age INT"}'
+
+curl -X POST http://localhost:3000/drop-table \
+  -H "Authorization: Bearer YOUR_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{"tableName":"users"}'
+
+curl -X POST http://localhost:3000/insert \
+  -H "Authorization: Bearer YOUR_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{"tableName":"users","data":{"name":"Linus","age":13}}'
+
+curl -X GET "http://localhost:3000/view?tableName=users" \
+  -H "Authorization: Bearer YOUR_API_KEY"
+
+curl -X POST http://localhost:3000/update \
+  -H "Authorization: Bearer YOUR_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "tableName":"users",
+    "updates":{"age":14},
+    "where":{"name":"Linus"}
+  }'
+
+curl -X POST http://localhost:3000/delete \
+  -H "Authorization: Bearer YOUR_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "tableName":"users",
+    "where":{"name":"Linus"}
+  }'
+
+curl -X POST http://localhost:3000/sql \
+  -H "Authorization: Bearer YOUR_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "sql": "SELECT * FROM users WHERE age > ?",
+    "params": [12]
+  }'
