@@ -45,7 +45,62 @@ npm run dev
 
 Now you have your database & backend fully setup. If your not using a cloud service to host, you will need to port forward your webserver to the open world. I prefer to use ``Cloudflared`` and Zero Trust on cloudflare for this.
 
-After that, import the javascript module and example script and follow the api docs there.
+You can view the list of endpoints and example usages in the ``APIs.txt`` file.
+
+## Using the provided javascript module
+
+Access the source for the module and example code [here](https://github.com/linuskangsoftware/netdb/tree/main/clientModules/javascriptModule)
+
+Create a new NodeJS project
+
+```bash
+mkdir NetDBTest
+cd NetDBTest
+npm init -y
+npm install node-fetch
+mkdir src
+```
+
+Paste ``netdb.js`` inside of ``/src/netdb.js``. The code available from the link above or [here](https://github.com/linuskangsoftware/netdb/tree/main/clientModules/javascriptModule/netdb.js).
+
+Next, create a new javascript file in ``/NetDBTest/example.js`` and paste in this available [here](https://github.com/linuskangsoftware/netdb/tree/main/clientModules/javascriptModule/example.js).
+
+```javascript
+const NetDB = require("./src/netdb");
+const db = NetDB("http://localhost:4000", "your_super_secret_api_key_here");
+
+async function main() {
+  try {
+    //await db.createTable("users", "id INT PRIMARY KEY AUTO_INCREMENT, name VARCHAR(255), age INT");
+    
+    //await db.insert("users", { name: "Linus", age: 13 });
+    //const rows = await db.view("users");
+    //console.log("Users:", rows);
+
+    //await db.update("users", { age: 14 }, { name: "Linus" });
+    //const sqlResult = await db.rawSQL("SELECT * FROM users WHERE age > ?", [12]);
+    //console.log("Raw SQL:", sqlResult);
+
+    //await db.update("users", { age: 14 }, { name: "Linus" });
+
+    //const updatedUsers = await db.view("users");
+    //console.log("Users after update:", updatedUsers);
+
+    //const sqlResult = await db.rawSQL("SELECT * FROM users WHERE age > ?", [12]);
+    //console.log("Raw SQL result:", sqlResult);
+
+    //await db.delete("users", { name: "Linus" });
+    //await db.dropTable("users");
+
+  } catch (err) {
+    console.error("Error:", err.message);
+  }
+}
+
+main();
+```
+
+The script above gives you examples on the entire javascript module framework for interfacing your NetDB database.
 
 ## License & Credit
 
