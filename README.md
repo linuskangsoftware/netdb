@@ -1,6 +1,6 @@
 # NetDB: Easy database management endpoints
 
-NetDB is a very easy safe and secure solution to expose your database endpoints out to the real world. It is optimised for Roblox, with a provided Module and example script to make managing your database easy.
+NetDB is a very easy safe and secure solution to expose your MariaDB database endpoints out to the real world.
 
 ## Getting started
 
